@@ -1,0 +1,13 @@
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\bin\Debug\net8.0\Core.deps.json
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\bin\Debug\net8.0\Core.dll
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\bin\Debug\net8.0\Core.pdb
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\Core.sourcelink.json
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\Core.dll
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\refint\Core.dll
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\Core.pdb
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\ref\Core.dll
+D:\Repositorios\Project-App-Net-Ecommerce\Api\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
