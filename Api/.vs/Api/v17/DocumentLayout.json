@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Repositorios\\Project-App-Net-Ecommerce\\Api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5CC1EA12-3B1E-4D1A-A0BF-99ECDAAF2E83}|Api\\Api.csproj|d:\\repositorios\\project-app-net-ecommerce\\api\\api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CC1EA12-3B1E-4D1A-A0BF-99ECDAAF2E83}|Api\\Api.csproj|solutionrelative:api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CC1EA12-3B1E-4D1A-A0BF-99ECDAAF2E83}|Api\\Api.csproj|d:\\repositorios\\project-app-net-ecommerce\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CC1EA12-3B1E-4D1A-A0BF-99ECDAAF2E83}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CC1EA12-3B1E-4D1A-A0BF-99ECDAAF2E83}|Api\\Api.csproj|d:\\repositorios\\project-app-net-ecommerce\\api\\api\\extensions\\serviciosaplicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CC1EA12-3B1E-4D1A-A0BF-99ECDAAF2E83}|Api\\Api.csproj|solutionrelative:api\\extensions\\serviciosaplicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CC1EA12-3B1E-4D1A-A0BF-99ECDAAF2E83}|Api\\Api.csproj|d:\\repositorios\\project-app-net-ecommerce\\api\\api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CC1EA12-3B1E-4D1A-A0BF-99ECDAAF2E83}|Api\\Api.csproj|solutionrelative:api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiciosAplicacion.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Project-App-Net-Ecommerce\\Api\\Api\\Extensions\\ServiciosAplicacion.cs",
+              "RelativeDocumentMoniker": "Api\\Extensions\\ServiciosAplicacion.cs",
+              "ToolTip": "D:\\Repositorios\\Project-App-Net-Ecommerce\\Api\\Api\\Extensions\\ServiciosAplicacion.cs",
+              "RelativeToolTip": "Api\\Extensions\\ServiciosAplicacion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T21:08:53.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Project-App-Net-Ecommerce\\Api\\Api\\Program.cs",
+              "RelativeDocumentMoniker": "Api\\Program.cs",
+              "ToolTip": "D:\\Repositorios\\Project-App-Net-Ecommerce\\Api\\Api\\Program.cs",
+              "RelativeToolTip": "Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T20:56:34.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Project-App-Net-Ecommerce\\Api\\Api\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Repositorios\\Project-App-Net-Ecommerce\\Api\\Api\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Api\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T20:56:13.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\Repositorios\\Project-App-Net-Ecommerce\\Api\\Api\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\Repositorios\\Project-App-Net-Ecommerce\\Api\\Api\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Api\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T20:56:12.551Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
