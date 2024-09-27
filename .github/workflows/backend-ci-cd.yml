@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,22 +29,22 @@ jobs:
     - name: Restore dependencies
       run: |
         # Ajusta esta ruta al directorio donde se encuentra tu archivo .csproj o .sln
-        cd ./Api/Api  
+        cd ./Backend/Api  # Ajusta esto según la estructura de tu proyecto
         dotnet restore
 
     - name: Build
       run: |
-        cd ./Api/Api  
+        cd ./Api/Api
         dotnet build --no-restore
 
     - name: Test
       run: |
-        cd ./Api/Api  
+        cd ./Api/Api
         dotnet test --no-build --verbosity normal
 
     - name: Publish
       run: |
-        cd ./Api/Api  
+        cd ./Api/Api
         dotnet publish -c Release -o ../../publish
 
     - name: Upload artifact
@@ -65,12 +70,11 @@ jobs:
         # Aquí irían los comandos para desplegar a tu entorno de staging
 
     - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
       with:
         tag_name: v${{ github.run_number }}
-        release_name: Release v${{ github.run_number }}
+        name: Release v${{ github.run_number }}
         draft: false
         prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
