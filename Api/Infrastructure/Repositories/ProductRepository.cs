@@ -38,8 +38,16 @@ namespace Infrastructure.Repositories
 
         public async Task UpdateProductAsync(Product product)
         {
-            _context.Entry(product).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Entry(product).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+          
         }
 
         public async Task DeleteProductAsync(int id)

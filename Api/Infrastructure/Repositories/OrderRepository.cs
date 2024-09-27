@@ -1,4 +1,5 @@
-﻿using Core.Entities;
+﻿using Core.DTOs;
+using Core.Entities;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -25,11 +26,11 @@ namespace Infrastructure.Repositories
             return await _context.Orders.Include(o => o.Items).FirstOrDefaultAsync(o => o.Id == id);
         }
 
-        public async Task<Order> CreateOrderAsync(Order order)
+        public async Task<Order> CreateOrderAsync(Order orders)
         {
-            _context.Orders.Add(order);
+            _context.Orders.Add(orders);
             await _context.SaveChangesAsync();
-            return order;
+            return orders;
         }
 
         public async Task UpdateOrderAsync(Order order)
@@ -40,10 +41,10 @@ namespace Infrastructure.Repositories
 
         public async Task DeleteOrderAsync(int id)
         {
-            var order = await _context.Products.FindAsync(id);
+            var order = await _context.Orders.FindAsync(id);
             if (order != null)
             {
-                _context.Products.Remove(order);
+                _context.Orders.Remove(order);
                 await _context.SaveChangesAsync();
             }
         }

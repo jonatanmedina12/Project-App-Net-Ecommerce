@@ -92,5 +92,9 @@ namespace Core.Services
 
             return tokenHandler.WriteToken(token);
         }
+        public async Task<User> GetEmailUser(string email)
+        {
+            return await _userRepository.GetEmailUser(email);
+        }
     }
 }
