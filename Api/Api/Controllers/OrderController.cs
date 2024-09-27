@@ -1,4 +1,5 @@
-﻿using Core.Entities;
+﻿using Core.DTOs;
+using Core.Entities;
 using Core.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -71,32 +72,55 @@ namespace Api.Controllers
         [Authorize]
 
         [HttpPut("ActualizarOrden/{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, Order order)
+        public async Task<IActionResult> UpdateOrder(int id, Order order)
         {
             try
             {
-                if (id != order.Id)
-                {
-                    return BadRequest(new { message = "No se encuentra la orden" });
-                }
-
+                // Validación del modelo
                 if (!ModelState.IsValid)
                 {
                     return BadRequest(new { message = "Invalido la orden.", errors = ModelState });
                 }
 
-                var existingProduct = await _orderService.GetOrderByIdAsync(id);
-                if (existingProduct == null)
+                // Obtener la orden existente
+                var existingOrder = await _orderService.GetOrderByIdAsync(id);
+                if (existingOrder == null)
                 {
                     return NotFound(new { message = $"Id no valido {id} not found." });
                 }
 
-                await _orderService.UpdateOrderAsync(order);
-                return Ok(new { message = "orden actualizado correctamente" });
+                // Actualizar las propiedades de la orden
+                existingOrder.OrderDate = DateTime.Now;
+                existingOrder.CustomerEmail = order.CustomerEmail;
+                existingOrder.TotalAmount = order.TotalAmount;
+
+                // Manejar los elementos de la orden
+                foreach (var item in order.Items)
+                {
+                    // Verificar si el ítem existe
+                    var existingItem = existingOrder.Items.FirstOrDefault(i => i.Id == item.Id);
+                    if (existingItem != null)
+                    {
+                        // Actualizar las propiedades del ítem existente
+                        existingItem.Price = item.Price; 
+                        existingItem.Quantity = item.Quantity; 
+                        
+                                                                 // ... asigne otras propiedades según sea necesario
+                    }
+                    else
+                    {
+                        // Agregar nuevo ítem si no existe
+                        existingOrder.Items.Add(item);
+                    }
+                }
+
+                // Guardar cambios en la base de datos
+                await _orderService.UpdateOrderAsync(existingOrder);
+                return Ok(new { message = "Orden actualizada correctamente" });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Se produjo un error al recuperar la orden.4", error = ex.Message });
+                return StatusCode(500, new { message = "Se produjo un error al actualizar la orden.", error = ex.Message });
             }
         }
         [Authorize]

@@ -15,7 +15,7 @@ namespace Api.Controllers
         {
             _productService = productService;
         }
-        [Authorize]
+   
         [HttpGet("TraerProductos")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
@@ -74,10 +74,7 @@ namespace Api.Controllers
         {
             try
             {
-                if (id != product.Id)
-                {
-                    return BadRequest(new { message = "No se encuentra el producto" });
-                }
+             
 
                 if (!ModelState.IsValid)
                 {
@@ -89,8 +86,16 @@ namespace Api.Controllers
                 {
                     return NotFound(new { message = $"Id no valido {id} not found." });
                 }
+                // Asigna los valores del ViewModel al producto existente
+                existingProduct.Name = product.Name;
+                existingProduct.Price = product.Price;
+                existingProduct.Description = product.Description;
+                existingProduct.StockQuantity = product.StockQuantity;
 
-                await _productService.UpdateProductAsync(product);
+                // Aquí es donde aseguras que el ID se pase correctamente
+                existingProduct.Id = id;
+
+                await _productService.UpdateProductAsync(existingProduct);
                 return Ok(new { message = "Producto actualizado correctamente" });
             }
             catch (Exception ex)

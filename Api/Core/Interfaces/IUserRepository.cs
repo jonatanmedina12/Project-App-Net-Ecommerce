@@ -11,5 +11,6 @@ namespace Core.Interfaces
     {
         Task<User> GetUserByUsernameAsync(string username);
         Task<User> CreateUserAsync(User user);
+        Task<User> GetEmailUser(string email);
     }
 }
