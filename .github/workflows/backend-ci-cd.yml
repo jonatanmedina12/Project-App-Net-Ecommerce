@@ -29,7 +29,7 @@ jobs:
     - name: Restore dependencies
       run: |
         # Ajusta esta ruta al directorio donde se encuentra tu archivo .csproj o .sln
-        cd ./Backend/Api  # Ajusta esto según la estructura de tu proyecto
+        cd ./Api/Api  # Ajusta esto según la estructura de tu proyecto
         dotnet restore
 
     - name: Build
