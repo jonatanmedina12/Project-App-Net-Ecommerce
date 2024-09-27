@@ -2,6 +2,10 @@
 
 Este proyecto es una API RESTful para un sistema de e-commerce, construido con .NET 8. Proporciona endpoints para la gestión de productos, órdenes y autenticación de usuarios.
 
+![Modelo Entidad-Relación](Entidad.png))
+
+
+
 ## Características
 
 - Autenticación de usuarios con JWT
@@ -38,7 +42,20 @@ Este proyecto es una API RESTful para un sistema de e-commerce, construido con .
        "Audience": "TuAudience"
      }
      ```
-
+4. Configurar correo
+   -Abrir `Api/appsettings.json`
+   - Modificar la cadena de conexión
+   ```json
+     "AppName": "E-ecommers",
+   "EmailSettings": {
+     "FromAddress": "@outlook.com",
+     "SmtpHost": "smtp-mail.outlook.com",
+     "SmtpPort": 587,
+     "EnableSsl": true,
+     "Username": "@outlook.com",
+     "Password": "_I"
+   },
+   ```
 ## Instalación
 
 1. Restaurar los paquetes NuGet:
@@ -48,7 +65,9 @@ Este proyecto es una API RESTful para un sistema de e-commerce, construido con .
 
 2. Aplicar las migraciones para crear la base de datos:
    ```
-   cd Api
+   cd Infrastructure
+   dotnet ef migrations add InitialMigration
+
    dotnet ef database update
    ```
 
@@ -89,10 +108,34 @@ Para ejecutar las pruebas unitarias:
 dotnet test
 ```
 
-## Despliegue
+## Integración Continua y Despliegue Continuo (CI/CD)
 
-Este proyecto está configurado para ser desplegado en Azure App Service. Consulta el archivo `azure-pipelines.yml` para ver la configuración de CI/CD.
+Este proyecto utiliza GitHub Actions para implementar un pipeline de CI/CD. El pipeline está configurado para construir, probar y desplegar automáticamente la aplicación cuando se realizan cambios en el repositorio.
 
+### Configuración del Workflow
+
+El archivo de configuración del workflow se encuentra en `.github/workflows/backend-ci-cd.yml`. Este workflow se activa en los siguientes eventos:
+
+- Push a la rama `main`
+- Pull requests hacia la rama `main`
+
+### Pasos del Pipeline
+
+1. **Construcción (Build)**
+   - Configura el entorno .NET
+   - Restaura las dependencias del proyecto
+   - Compila el proyecto
+   - Ejecuta las pruebas unitarias
+   - Publica la aplicación
+
+2. **Despliegue (Deploy)**
+   - Se ejecuta solo para pushes a la rama `main`
+   - Descarga el artefacto construido
+   - Simula un despliegue a un entorno de staging (esto debe ser personalizado según tus necesidades de despliegue)
+
+3. **Control de Versiones**
+   - Crea una nueva release en GitHub con cada push exitoso a `main`
+   - Utiliza el número de ejecución del workflow como número de versión
 
 ## Licencia
 
